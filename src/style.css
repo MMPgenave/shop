@@ -1,0 +1,10 @@
+
+.item_container {
+    width: 50%;
+    height: 100px;
+display: flex;
+flex-direction: row;
+background-color: aliceblue;
+justify-content: space-between;
+margin:20px;
+}
