@@ -1,6 +1,6 @@
-import Component from 'react';
+import React from 'react';
 
-class Appfortest extends Component {
+class Appfortest extends React.Component {
 
     state={
         counter:0,
