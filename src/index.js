@@ -5,7 +5,7 @@ import App from "./App";
 
 ReactDOM.render(
   <>
-    <App />
+    <Appfortest />
   </>,
   document.getElementById("root")
 );
