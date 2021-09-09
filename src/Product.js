@@ -1,6 +1,18 @@
 import React from "react";
 import "./style.css";
+
+import { useEffect } from "react";
 export const Product = (props) => {
+
+
+  useEffect(() => {
+    console.log("useEffect runs")
+    
+    
+    return () => { console.log("CWUM"); }
+    
+  },[])
+
   return (
     <>
       {props.info.map((I) => {

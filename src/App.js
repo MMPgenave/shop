@@ -1,10 +1,15 @@
 import { Component } from "react";
 import data from "./data";
 import { Product } from "./Product";
+
 class App extends Component {
+
   constructor(props) {
+
     super(props);
+
     this.state = {
+   
       info: data,
       numberOfItem: new Array(data.length).fill(0),
       removeItem: (I) => {
@@ -47,7 +52,9 @@ class App extends Component {
   render() {
     return (
       <>
-        {
+        
+     
+       
           <Product
             info={this.state.info}
             removefcn={this.state.removeItem}
@@ -55,7 +62,8 @@ class App extends Component {
             IncreaseItem={this.state.increaseItem}
             DecreaseItem={this.state.decreaseItem}
           />
-        }
+       
+        
       </>
     );
   }
