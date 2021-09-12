@@ -3,7 +3,7 @@ import data from "./productsdata";
 
 const initialState = {
   data,
-  numberOfReservedItem: new Array(data.length).fill(2),
+  numberOfReservedItem: new Array(data.length).fill(0),
 };
 
 //reducer Function
@@ -36,6 +36,25 @@ const reducer = (state, action) => {
         return temp;
       }
       break;
+    case "filter": {
+
+      if (action.payload === "") {
+        return initialState;
+      }
+      // here I didn't use the return feature of map method! , amazing
+      let newProducts = [];
+      initialState.data.map((product) => {
+        product.availableSizes.map((size) => {
+          if (size === action.payload) {
+            newProducts.push(product);
+          }
+        });
+        console.log(`filtered data are ${newProducts}`);
+      });
+      const newState = { ...initialState };
+      newState.data = newProducts;
+      return newState;
+    }
     default:
   }
 }; //end reducer function

@@ -59,9 +59,9 @@ h4 {
 
 .filter {
 
-  background-color: rgb(253, 181, 109);
+  
   width: 300px;
-  height: 100px;
+  height: 50px;
 margin-left:auto;
 margin-right: auto;
 
@@ -78,9 +78,11 @@ margin-right: auto;
 }
 
 .temp{
+  display: flex;
+  flex-direction: row;
   border:1px solid lightslategray;
   border-radius: 5px;
-  width: 150px;
+  width: 250px;
   height: 30%;
   margin-top: auto;
   margin-bottom: auto;
