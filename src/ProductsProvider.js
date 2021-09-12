@@ -1,23 +1,32 @@
-import React, { useContext, useState } from "react";
+import React, { useReducer, useState } from "react";
 import data from "./data";
+
+const initialState = {
+  data
+};
+
+//reducer Function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "deleteItem":
+      const newProducts = state.data.filter((product) => {
+        return product.id !== action.id;
+      });
+      return { ...state, data: newProducts };
+      break;
+
+    default:
+  }
+}; //end reducer function
 
 export const myContext = React.createContext();
 
-//Proider component
+//Provider component
 const ProductsProvider = (props) => {
-  const [products, setProducts] = useState(data);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  //deleteItem Function handler
-  const deleteItem = (id) => {
-    const newProducts = products.filter((product) => {
-      return product.id !== id;
-    });
-    setProducts((prevState) => newProducts);
-  };
   return (
-    <myContext.Provider
-      value={{ info: products, action: { delete: deleteItem } }}
-    >
+    <myContext.Provider value={{ info: state.data, dispatch }}>
       {props.children}
     </myContext.Provider>
   );
