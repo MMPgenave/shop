@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-import data from "./data";
+import data from "./productsdata";
 
 const initialState = {
   data,
