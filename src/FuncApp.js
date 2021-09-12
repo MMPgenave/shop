@@ -7,7 +7,6 @@ const FuncApp = () => {
   return (
     <>
       <ProductsProvider>
-        <h1>Hi</h1>
         <Navbar />
         <Product />
       </ProductsProvider>

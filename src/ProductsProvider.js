@@ -2,7 +2,8 @@ import React, { useReducer, useState } from "react";
 import data from "./data";
 
 const initialState = {
-  data
+  data,
+  numberOfReservedItem: new Array(data.length).fill(2),
 };
 
 //reducer Function
@@ -15,6 +16,26 @@ const reducer = (state, action) => {
       return { ...state, data: newProducts };
       break;
 
+    case "addToCart":
+      {
+        const temp = { ...state };
+        temp.numberOfReservedItem[action.id - 1]++;
+        return temp;
+      }
+      break;
+
+    case "removeFromCart":
+      {
+        const temp = { ...state };
+        if (state.numberOfReservedItem[action.id - 1] === 0) {
+          temp.numberOfReservedItem[action.id - 1] = 0;
+        } else {
+          temp.numberOfReservedItem[action.id - 1]--;
+        }
+
+        return temp;
+      }
+      break;
     default:
   }
 }; //end reducer function
@@ -26,7 +47,9 @@ const ProductsProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <myContext.Provider value={{ info: state.data, dispatch }}>
+    <myContext.Provider
+      value={{ info: state.data, NORI: state.numberOfReservedItem, dispatch }}
+    >
       {props.children}
     </myContext.Provider>
   );

@@ -42,6 +42,14 @@ body {
   background: var(--clr-grey-10);
 }
 
+h3 {
+  margin: auto auto auto 10px;
+}
+
+h4 {
+  margin: auto 5px auto auto;
+}
+
 .Navbar {
   background-color: aqua;
   text-align: center;
@@ -59,7 +67,47 @@ body {
   border-radius: 5px;
 }
 
-.btn {
+.temp{
+  border:1px solid lightslategray;
+  border-radius: 5px;
+  width: 150px;
+  height: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-top: 20px;
+  padding-bottom: auto;
+  font-size: 20px;
+}
+
+
+.increase_btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  margin: auto 10px auto 10px;
+  font-size: 20px;
+  padding-top: 1px;
+}
+
+.increase_btn:hover {
+  background: rgb(107, 128, 245);
+  color: white;
+}
+.decrease_btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  margin: auto 10px auto 10px;
+  font-size: 20px;
+  padding-top: 1px;
+}
+
+.decrease_btn:hover {
+background: rgb(237, 240, 86);
+  color: white;
+}
+
+.delete_btn {
   width: 100px;
   margin: auto 5px auto 10px;
   height: 50px;
@@ -69,29 +117,9 @@ body {
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
 }
-.btn:hover {
+.delete_btn:hover {
   background: var(--clr-red-dark);
   color: white;
-}
-
-.increase {
-  width: 30px;
-  height: 30px;
-  border-radius: 20%;
-  margin: auto 10px auto 10px;
-}
-.decrease {
-  width: 30px;
-  height: 30px;
-  border-radius: 20%;
-  margin: auto 10px auto 10px;
-}
-h3 {
-  margin: auto auto auto 10px;
-}
-
-h4 {
-  margin: auto 5px auto auto;
 }
 
 .numberOfProduct {
@@ -102,4 +130,5 @@ h4 {
   background: rgb(109, 241, 137);
   text-align: center;
   margin: auto 10px auto 10px;
+  padding-top: 6px;
 }

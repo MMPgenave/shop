@@ -3,8 +3,8 @@ import "./style.css";
 import { myContext } from "./ProductsProvider";
 
 const Product = () => {
-  const { info, dispatch } = useContext(myContext);
-
+  const { info, NORI, dispatch } = useContext(myContext);
+  
   return (
     <>
       {info.map((Item) => {
@@ -12,7 +12,23 @@ const Product = () => {
           <div key={Item.id} className="item_container">
             <h3>Product name : {Item.name} course</h3>
             <h3>Product price : {Item.price}</h3>
+            <div className="numberOfProduct">{NORI[Item.id - 1]}</div>
+            <div className="temp">{Item.name}</div>
             <button
+              className="decrease_btn"
+              onClick={() => dispatch({ type: "removeFromCart", id: Item.id })}
+            >
+              -
+            </button>
+            <button
+              className="increase_btn"
+              onClick={() => dispatch({ type: "addToCart", id: Item.id })}
+            >
+              +
+            </button>
+
+            <button
+              className="delete_btn"
               onClick={() => dispatch({ type: "deleteItem", id: Item.id })}
             >
               delete
