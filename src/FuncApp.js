@@ -1,14 +1,15 @@
 import React from "react";
-import ProvideR from "./Provider";
+import ProductsProvider from "./ProductsProvider";
 import Product from "./Product";
 
 const FuncApp = () => {
   return (
     <>
-      <ProvideR>
+      <ProductsProvider>
         <h1>Hi</h1>
+
         <Product />
-      </ProvideR>
+      </ProductsProvider>
     </>
   );
 };
