@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App";
-
+import FuncApp from "./FuncApp.js";
 ReactDOM.render(
   <>
-    <App />
+    <FuncApp />
   </>,
   document.getElementById("root")
 );
