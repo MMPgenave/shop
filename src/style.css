@@ -39,8 +39,14 @@
   --fixed-width: 620px;
 }
 body {
-      background: var(--clr-grey-10);
+  background: var(--clr-grey-10);
+}
 
+.Navbar {
+  background-color: aqua;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
 }
 .item_container {
   width: 80%;
@@ -49,7 +55,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   margin: 20px;
-  border:2px solid lightskyblue;
+  border: 2px solid lightskyblue;
   border-radius: 5px;
 }
 
@@ -72,31 +78,28 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 20%;
- margin: auto 10px auto 10px;
-
+  margin: auto 10px auto 10px;
 }
 .decrease {
   width: 30px;
   height: 30px;
   border-radius: 20%;
-    margin: auto 10px auto 10px;
-
+  margin: auto 10px auto 10px;
 }
 h3 {
-    margin:auto auto auto 10px;
+  margin: auto auto auto 10px;
 }
 
 h4 {
-     margin:auto 5px auto auto;
+  margin: auto 5px auto auto;
 }
 
 .numberOfProduct {
-    width: 30px;
-    height: 30px;
-    border: 1px solid lightseagreen;
-    border-radius: 40%;
-    background: rgb(109, 241, 137);
-    text-align: center;
-    margin:auto 10px auto 10px; 
-    
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightseagreen;
+  border-radius: 40%;
+  background: rgb(109, 241, 137);
+  text-align: center;
+  margin: auto 10px auto 10px;
 }
