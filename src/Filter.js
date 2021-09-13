@@ -1,12 +1,10 @@
-import React, { useState } from 'react'
-import { useContext } from 'react';
-import Select from 'react-select';
-import { myContext } from './ProductsProvider';
-
+import React, { useState } from "react";
+import { useContext } from "react";
+import Select from "react-select";
+import { myContext } from "./ProductsProvider";
 
 export default function Filter() {
-
-  const {dispatch}=useContext(myContext)
+  const { dispatch } = useContext(myContext);
   const [value, setValue] = useState("");
 
   const options = [
@@ -15,15 +13,16 @@ export default function Filter() {
     { value: "S", label: "S" },
     { value: "L", label: "L" },
     { value: "XL", label: "XL" },
-    { value: "XXL", label: "XXL" },
+    { value: "XXL", label: "XXL" }
   ];
   const onChangeHandler = (selectedOption) => {
     dispatch({ type: "filter", payload: selectedOption.value });
     setValue(selectedOption);
-  }
-    return (
-      <div className="filter">
-        <Select value={value} onChange={onChangeHandler} options={options} />
-      </div>
-    );
+  };
+  return (
+    <div className="filter">
+      Filter based on size:
+      <Select value={value} onChange={onChangeHandler} options={options} />
+    </div>
+  );
 }

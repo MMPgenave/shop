@@ -3,7 +3,7 @@ import data from "./productsdata";
 
 const initialState = {
   data,
-  numberOfReservedItem: new Array(data.length).fill(0),
+  numberOfReservedItem: new Array(data.length).fill(0)
 };
 
 //reducer Function
@@ -37,7 +37,6 @@ const reducer = (state, action) => {
       }
       break;
     case "filter": {
-
       if (action.payload === "") {
         return initialState;
       }
@@ -54,6 +53,31 @@ const reducer = (state, action) => {
       const newState = { ...initialState };
       newState.data = newProducts;
       return newState;
+    }
+    //Sort action
+    case "sort": {
+      if (action.payload === "") {
+        return initialState;
+      }
+      if (action.payload === "ascending") {
+        const Data = [...state.data];
+        let temp = {};
+        const Length = Data.length;
+        for (let i = 0; i < Length; i++) {
+          for (let j = i + 1; j < Length; j++) {
+            if (Data[i].price > Data[j].price) {
+              temp = { ...Data[i] };
+              Data[i] = { ...Data[j] };
+              Data[j] = { ...temp };
+            }
+          }
+        }
+        const newState = { ...initialState };
+        newState.data = Data;
+        return newState;
+      }
+      if (action.payload === "descending") {
+      }
     }
     default:
   }
