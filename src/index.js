@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import FuncApp from "./FuncApp.js";
+import FuncApp from "./components/FuncApp";
 
 ReactDOM.render(
   <>
