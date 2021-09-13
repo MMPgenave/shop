@@ -1,5 +1,7 @@
+import _ from "lodash";
 import React, { useReducer, useState } from "react";
 import data from "./productsdata";
+
 
 const initialState = {
   data,
@@ -57,7 +59,7 @@ const reducer = (state, action) => {
     //Sort action
     case "sort": {
       if (action.payload === "") {
-        return initialState;
+        return state;
       }
       if (action.payload === "ascending") {
         const Data = [...state.data];
@@ -72,11 +74,16 @@ const reducer = (state, action) => {
             }
           }
         }
-        const newState = { ...initialState };
+        const newState = { ...state };
         newState.data = Data;
         return newState;
       }
       if (action.payload === "descending") {
+        //here I used lodash library
+        const descSortedData = _.orderBy(state.data, ["price"], ["desc"]);
+        const newState = { ...state }
+        newState.data = descSortedData;
+        return newState;
       }
     }
     default:
