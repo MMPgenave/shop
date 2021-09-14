@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useContext } from "react";
-import Select from "react-select";
 import { myContext } from "./ProductsProvider";
+import SelectComp from '../common/SelectComp/Select'
 
 export default function Filter() {
   const { dispatch } = useContext(myContext);
@@ -37,19 +37,17 @@ export default function Filter() {
 
   return (
     <div className="filter">
-      <h4>Filter based on size:</h4>
-      <Select
-        className="select"
+      <SelectComp
         value={value}
-        onChange={onChangeHandler}
+        Handler={onChangeHandler}
         options={options}
+        title="filter based on size"
       />
-      <h4>Sort based on Price:</h4>
-      <Select
-        className="select"
-         value={sortvalue}
-        onChange={sortHandler}
+      <SelectComp
+        value={sortvalue}
+        Handler={sortHandler}
         options={sortOptions}
+        title="filter based on Price"
       />
     </div>
   );
