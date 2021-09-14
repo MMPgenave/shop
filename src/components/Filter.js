@@ -38,9 +38,19 @@ export default function Filter() {
   return (
     <div className="filter">
       <h4>Filter based on size:</h4>
-      <Select value={value} onChange={onChangeHandler} options={options} />
+      <Select
+        className="select"
+        value={value}
+        onChange={onChangeHandler}
+        options={options}
+      />
       <h4>Sort based on Price:</h4>
-      <Select value={sortvalue} onChange={sortHandler} options={sortOptions} />
+      <Select
+        className="select"
+         value={sortvalue}
+        onChange={sortHandler}
+        options={sortOptions}
+      />
     </div>
   );
 }

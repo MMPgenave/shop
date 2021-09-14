@@ -51,19 +51,27 @@ h4 {
 }
 
 .Navbar {
-  background-color: aqua;
+  width: 300px;
+  height: 40px;
+  border:2px solid lightseagreen;
+  border-radius: 5px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  font-size: 40px;
+  font-size: 25px;
+  padding-top: 4px;
+  margin:20px auto 10px auto;
 }
 
 .filter {
-  background-color: lime;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+ 
 }
 
+.select {
+  width: 200px;
+  margin-right: auto;
+}
 
 .item_container {
   width: 80%;
@@ -71,7 +79,7 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 20px;
+  margin: 20px auto 20px auto;
   border: 2px solid lightskyblue;
   border-radius: 5px;
 }
@@ -135,9 +143,9 @@ h4 {
 .numberOfProduct {
   width: 30px;
   height: 30px;
-  border: 1px solid lightseagreen;
+  border: 1px solid rgb(132, 236, 231);
   border-radius: 40%;
-  background: rgb(109, 241, 137);
+  background: rgb(154, 219, 245);
   text-align: center;
   margin: auto 10px auto 10px;
   padding-top: 6px;

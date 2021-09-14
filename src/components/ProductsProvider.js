@@ -89,10 +89,27 @@ const reducer = (state, action) => {
 
     //Search action
     case "search": {
+      if (action.payload === "") {
+        return initialState;
+      }
       const Data = [...initialState.data];
       const newData = [];
 
-      Data.map((product) => {});
+      Data.map((product) => {
+        let flag = 0;
+        product.availableSizes.forEach((value) => {
+          if (value === action.payload) {
+            flag = 1;
+          }
+        });
+        if (flag === 1) {
+          newData.push(product);
+        }
+      });
+      console.log(`newProduct = ${newData}`)
+      const updatedState = { ...initialState };
+      updatedState.data = newData;
+      return updatedState;
       /* Data.map(product=>{
         product.availableSizes.filter(size=>{
 size===action.payload
