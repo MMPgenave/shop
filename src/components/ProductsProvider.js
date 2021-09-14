@@ -2,7 +2,6 @@ import _ from "lodash";
 import React, { useReducer, useState } from "react";
 import data from "../productsdata";
 
-
 const initialState = {
   data,
   numberOfReservedItem: new Array(data.length).fill(0)
@@ -38,6 +37,7 @@ const reducer = (state, action) => {
         return temp;
       }
       break;
+
     case "filter": {
       if (action.payload === "") {
         return initialState;
@@ -81,10 +81,23 @@ const reducer = (state, action) => {
       if (action.payload === "descending") {
         //here I used lodash library
         const descSortedData = _.orderBy(state.data, ["price"], ["desc"]);
-        const newState = { ...state }
+        const newState = { ...state };
         newState.data = descSortedData;
         return newState;
       }
+    }
+
+    //Search action
+    case "search": {
+      const Data = [...initialState.data];
+      const newData = [];
+
+      Data.map((product) => {});
+      /* Data.map(product=>{
+        product.availableSizes.filter(size=>{
+size===action.payload
+        })
+      }) */
     }
     default:
   }
